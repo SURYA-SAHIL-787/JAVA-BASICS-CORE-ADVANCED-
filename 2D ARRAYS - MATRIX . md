@@ -1,0 +1,123 @@
+===========================================================
+============== SECTION 5 — 2D ARRAYS / MATRIX =============
+====================== (Q351 – Q420) ======================
+===========================================================
+
+
+-----------------------------------------------------------
+MATRIX BASICS & INPUT / OUTPUT
+-----------------------------------------------------------
+Q351. READ MATRIX AND PRINT
+Q352. SUM OF ALL ELEMENTS
+Q353. ROW SUMS
+Q354. COLUMN SUMS
+Q355. TRANSPOSE OF MATRIX
+
+
+-----------------------------------------------------------
+MATRIX ARITHMETIC OPERATIONS
+-----------------------------------------------------------
+Q356. ADD TWO MATRICES
+Q357. SUBTRACT TWO MATRICES
+Q358. MULTIPLY TWO MATRICES
+Q382. MATRIX POWER (A^2, A^3) USING MULTIPLICATION
+
+
+-----------------------------------------------------------
+MATRIX PROPERTY CHECKS
+-----------------------------------------------------------
+Q359. CHECK SQUARE MATRIX
+Q360. CHECK IDENTITY MATRIX
+Q361. CHECK DIAGONAL MATRIX
+Q362. CHECK UPPER TRIANGULAR MATRIX
+Q363. CHECK LOWER TRIANGULAR MATRIX
+Q364. CHECK SYMMETRIC MATRIX
+Q379. CHECK MAGIC SQUARE (BASIC)
+Q395. CHECK DIAGONAL DOMINANCE (BASIC)
+Q412. CHECK TOEPLITZ MATRIX
+Q413. CHECK CIRCULANT MATRIX (BASIC)
+
+
+-----------------------------------------------------------
+DIAGONALS, TRACE & NUMERICAL OPERATIONS
+-----------------------------------------------------------
+Q365. TRACE OF MATRIX
+Q366. MAIN DIAGONAL SUM
+Q367. SECONDARY DIAGONAL SUM
+Q380. DETERMINANT OF 2x2 MATRIX
+Q381. DETERMINANT OF 3x3 MATRIX (FORMULA)
+
+
+-----------------------------------------------------------
+ELEMENT SEARCHING & ANALYSIS
+-----------------------------------------------------------
+Q368. FIND MAX ELEMENT AND ITS POSITION
+Q369. FIND MIN ELEMENT AND ITS POSITION
+Q370. COUNT ZERO ELEMENTS (SPARSE MATRIX)
+Q389. COUNT PRIME NUMBERS IN MATRIX
+Q408. COUNT OCCURRENCES OF A NUMBER
+Q409. SEARCH IN SORTED ROWS (LINEAR)
+Q410. SEARCH IN SORTED MATRIX (STAIRCASE METHOD)
+
+
+-----------------------------------------------------------
+MATRIX TRAVERSALS
+-----------------------------------------------------------
+Q371. PRINT BOUNDARY ELEMENTS
+Q372. SPIRAL TRAVERSAL
+Q403. ZIGZAG TRAVERSAL
+Q404. WAVE TRAVERSAL (COLUMN-WISE)
+Q405. WAVE TRAVERSAL (ROW-WISE)
+Q411. DIAGONAL TRAVERSAL
+
+
+-----------------------------------------------------------
+ROTATION, MIRRORING & REARRANGEMENT
+-----------------------------------------------------------
+Q373. ROTATE MATRIX 90 DEGREE CLOCKWISE (NxN)
+Q374. ROTATE MATRIX 90 DEGREE ANTI-CLOCKWISE
+Q375. MIRROR MATRIX HORIZONTALLY
+Q376. MIRROR MATRIX VERTICALLY
+Q377. PRINT EACH ROW REVERSED
+Q378. PRINT EACH COLUMN REVERSED
+Q391. SWAP TWO ROWS
+Q392. SWAP TWO COLUMNS
+
+
+-----------------------------------------------------------
+ROW / COLUMN PROCESSING
+-----------------------------------------------------------
+Q384. FIND ROW WITH MAXIMUM SUM
+Q385. FIND COLUMN WITH MINIMUM SUM
+Q386. SORT EACH ROW
+Q387. SORT EACH COLUMN
+Q401. FIND MAX ELEMENT IN EACH ROW
+Q402. FIND MIN ELEMENT IN EACH COLUMN
+Q390. REPLACE NEGATIVE ELEMENTS WITH 0
+
+
+-----------------------------------------------------------
+SPARSE MATRIX OPERATIONS
+-----------------------------------------------------------
+Q396. COMPRESS SPARSE MATRIX TO 3-TUPLE FORMAT
+Q397. ADD MATRICES USING SPARSE TUPLE (BASIC)
+
+
+-----------------------------------------------------------
+APPLICATION-BASED MATRIX PROBLEMS
+-----------------------------------------------------------
+Q398. BUILD TIC-TAC-TOE BOARD (2D CHAR ARRAY)
+Q399. CHECK WIN CONDITION (ROWS, COLUMNS, DIAGONALS)
+Q400. MULTIPLICATION TABLE MATRIX
+Q414. BUILD MINESWEEPER HINT MATRIX
+Q415. BUILD SEATING ARRANGEMENT MATRIX
+Q416. ALLOCATE ROLL NUMBERS TO SEATS
+Q417. FIND EMPTY SEATS
+Q418. BOOK / CANCEL SEAT (0 / 1)
+Q419. PRINT SEAT STATUS REPORT
+Q420. MATRIX UTILITY MENU PROGRAM
+
+
+===========================================================
+===================== END OF SECTION 5 =====================
+===========================================================
