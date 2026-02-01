@@ -1,0 +1,302 @@
+####################################################################################################
+#                                                                                                  #
+#                               J  A V A   C O N T R O L   F L O W                                 #
+#                                                                                                  #
+####################################################################################################
+
+JAVA CONTROL FLOW
+|
++--------------------------------------------------------------------------------------------------+
+|  A) CORE FOUNDATIONS (MUST BEFORE IF / LOOPS)                                                    |
++--------------------------------------------------------------------------------------------------+
+|  |
+|  +-- A1) PROGRAM FLOW + BLOCKS                                                                   |
+|  |   |
+|  |   +-- STATEMENTS (EXECUTE TOP -> DOWN)                                                        |
+|  |   +-- CODE BLOCKS { } (GROUP STATEMENTS)                                                      |
+|  |   +-- NESTING (BLOCK INSIDE BLOCK)                                                            |
+|  |   +-- SCOPE + LIFETIME                                                                        |
+|  |       |
+|  |       +-- LOCAL VARIABLES (EXIST ONLY INSIDE BLOCK)                                           |
+|  |       +-- SHADOWING (INNER VARIABLE HIDES OUTER)                                              |
+|  |
+|  +-- A2) BOOLEAN LOGIC (THE ENGINE)                                                              |
+|  |   |
+|  |   +-- BOOLEAN TYPE                                                                            |
+|  |   |   |
+|  |   |   +-- TRUE / FALSE                                                                        |
+|  |   |
+|  |   +-- RELATIONAL OPERATORS (COMPARE VALUES)                                                   |
+|  |   |   |
+|  |   |   +-- >   <   >=   <=                                                                     |
+|  |   |   +-- ==  !=                                                                              |
+|  |   |
+|  |   +-- LOGICAL OPERATORS (COMBINE CONDITIONS)                                                  |
+|  |   |   |
+|  |   |   +-- &&   (AND)                                                                          |
+|  |   |   +-- ||   (OR)                                                                           |
+|  |   |   +-- !    (NOT)                                                                          |
+|  |   |   |
+|  |   |   +-- SHORT-CIRCUIT BEHAVIOR                                                              |
+|  |   |       |
+|  |   |       +-- A && B : IF A IS FALSE -> B NOT EXECUTED                                        |
+|  |   |       +-- A || B : IF A IS TRUE  -> B NOT EXECUTED                                        |
+|  |   |
+|  |   +-- BITWISE VS LOGICAL (CONFUSION ZONE)                                                     |
+|  |       |
+|  |       +-- &   |   ^   ~   <<  >>  >>>   (BITWISE)                                             |
+|  |       +-- &   |                      (BOOLEAN BUT NON-SHORT-CIRCUIT)                           |
+|  |       +-- &&  ||                     (SHORT-CIRCUIT LOGICAL)                                  |
+|  |
+|  +-- A3) PRECEDENCE + PARENTHESES (CONTROL CORRECT MEANING)                                      |
+|  |   |
+|  |   +-- WHY ( ) IS IMPORTANT IN COMPLEX CONDITIONS                                              |
+|  |   +-- HIGH -> LOW (KEY PARTS)                                                                 |
+|  |       |
+|  |       +-- !  (NOT)                                                                            |
+|  |       +-- RELATIONAL :  >  <  >=  <=                                                          |
+|  |       +-- EQUALITY   :  == !=                                                                 |
+|  |       +-- && (AND)                                                                            |
+|  |       +-- || (OR)                                                                             |
+|  |
+|  +-- A4) COMPARISON RULES (MOST COMMON BUGS)                                                     |
+|      |
+|      +-- STRING COMPARISON                                                                       |
+|      |   |
+|      |   +-- USE equals() / equalsIgnoreCase()                                                   |
+|      |   +-- DO NOT USE == FOR CONTENT                                                           |
+|      |
+|      +-- FLOAT/DOUBLE COMPARISON                                                                 |
+|      |   |
+|      |   +-- AVOID DIRECT == (PRECISION)                                                         |
+|      |
+|      +-- ASSIGNMENT VS COMPARISON                                                                |
+|          |
+|          +-- =   (ASSIGN)                                                                        |
+|          +-- ==  (COMPARE)                                                                       |
+|
++--------------------------------------------------------------------------------------------------+
+|  B) SELECTION (DECISION MAKING)                                                                  |
++--------------------------------------------------------------------------------------------------+
+|  |
+|  +-- B1) IF (ONE-WAY BRANCH)                                                                     |
+|  |   |
+|  |   +-- if (CONDITION) STATEMENT;                                                               |
+|  |   +-- if (CONDITION) { BLOCK }                                                                |
+|  |   +-- BEST PRACTICE: ALWAYS USE { } FOR CLARITY                                               |
+|  |
+|  +-- B2) IF - ELSE (TWO-WAY BRANCH)                                                              |
+|  |   |
+|  |   +-- TRUE PATH                                                                               |
+|  |   +-- FALSE PATH                                                                              |
+|  |
+|  +-- B3) ELSE-IF LADDER (MULTI-WAY BRANCH)                                                       |
+|  |   |
+|  |   +-- FIRST TRUE CONDITION EXECUTES                                                           |
+|  |   +-- ORDER MATTERS (SPECIFIC -> GENERAL)                                                     |
+|  |   +-- FINAL else IS DEFAULT                                                                   |
+|  |
+|  +-- B4) NESTED DECISIONS                                                                        |
+|  |   |
+|  |   +-- if INSIDE if                                                                            |
+|  |   +-- if INSIDE else                                                                          |
+|  |   +-- READABILITY: INDENT + BRACES                                                            |
+|  |
+|  +-- B5) SWITCH (STATEMENT FORM)                                                                 |
+|  |   |
+|  |   +-- STRUCTURE                                                                               |
+|  |   |   |
+|  |   |   +-- switch (EXPR) {                                                                     |
+|  |   |   |      case CONST: ... break;                                                           |
+|  |   |   |      default:   ...                                                                   |
+|  |   |   |  }                                                                                   |
+|  |   |
+|  |   +-- PARTS                                                                                   |
+|  |   |   |
+|  |   |   +-- EXPRESSION                                                                          |
+|  |   |   +-- case                                                                                |
+|  |   |   +-- break                                                                               |
+|  |   |   +-- default                                                                             |
+|  |   |
+|  |   +-- FALL-THROUGH (NO break)                                                                 |
+|  |   |
+|  |   +-- ALLOWED TYPES                                                                           |
+|  |   |   |
+|  |   |   +-- byte, short, char, int                                                              |
+|  |   |   +-- String                                                                              |
+|  |   |   +-- enum                                                                                |
+|  |   |
+|  |   +-- CASE RULES                                                                              |
+|  |       |
+|  |       +-- MUST BE CONSTANT EXPRESSIONS                                                        |
+|  |       +-- NO DUPLICATE CASES                                                                  |
+|  |
+|  +-- B6) SWITCH (EXPRESSION FORM / MODERN)                                                       |
+|  |   |
+|  |   +-- ARROW CASES                                                                             |
+|  |   |   |
+|  |   |   +-- case X -> RESULT;                                                                   |
+|  |   |
+|  |   +-- MULTI-LINE RESULT WITH yield                                                            |
+|  |   |
+|  |   +-- SAFER DEFAULT (NO ACCIDENTAL FALL-THROUGH)                                              |
+|  |
+|  +-- B7) TERNARY OPERATOR (?:)                                                                   |
+|      |
+|      +-- condition ? VALUE_IF_TRUE : VALUE_IF_FALSE                                              |
+|      +-- USE FOR SHORT SIMPLE DECISIONS                                                          |
+|
++--------------------------------------------------------------------------------------------------+
+|  C) ITERATION (LOOPS / REPETITION)                                                               |
++--------------------------------------------------------------------------------------------------+
+|  |
+|  +-- C1) WHILE (ENTRY-CONTROLLED)                                                                |
+|  |   |
+|  |   +-- CHECK CONDITION FIRST                                                                   |
+|  |   +-- RUNS 0 OR MORE TIMES                                                                    |
+|  |   +-- INFINITE LOOP CAUSES                                                                    |
+|  |       |
+|  |       +-- CONDITION NEVER BECOMES FALSE                                                       |
+|  |       +-- UPDATE MISSING / WRONG                                                              |
+|  |
+|  +-- C2) DO-WHILE (EXIT-CONTROLLED)                                                              |
+|  |   |
+|  |   +-- RUN BODY FIRST, CHECK LATER                                                             |
+|  |   +-- RUNS AT LEAST ONCE                                                                      |
+|  |   +-- PERFECT FOR MENUS                                                                       |
+|  |
+|  +-- C3) FOR (COUNT-CONTROLLED)                                                                  |
+|  |   |
+|  |   +-- for (INIT ; CONDITION ; UPDATE)                                                         |
+|  |   |
+|  |   +-- INIT      (ONCE)                                                                        |
+|  |   +-- CONDITION (EACH LOOP)                                                                   |
+|  |   +-- UPDATE    (AFTER EACH ITERATION)                                                        |
+|  |   |
+|  |   +-- VARIATIONS                                                                              |
+|  |       |
+|  |       +-- MULTIPLE INIT / UPDATE                                                              |
+|  |       +-- for(;;) INFINITE                                                                    |
+|  |       +-- LOOP VARIABLE SCOPE (INSIDE LOOP)                                                   |
+|  |
+|  +-- C4) ENHANCED FOR (FOR-EACH)                                                                 |
+|  |   |
+|  |   +-- ARRAYS                                                                                  |
+|  |   +-- COLLECTIONS (ITERABLE)                                                                  |
+|  |   +-- LIMITS                                                                                  |
+|  |       |
+|  |       +-- NO INDEX DIRECTLY                                                                   |
+|  |       +-- MODIFICATION/REMOVAL NOT SAFE IN MANY CASES                                         |
+|  |
+|  +-- C5) NESTED LOOPS                                                                            |
+|      |
+|      +-- PATTERN PRINTING                                                                        |
+|      +-- 2D ARRAYS / MATRICES                                                                    |
+|      +-- COMPLEXITY IDEA (O(N^2), O(N^3))                                                        |
+|
++--------------------------------------------------------------------------------------------------+
+|  D) FLOW-CHANGE STATEMENTS (JUMPS / CONTROL INSIDE FLOW)                                         |
++--------------------------------------------------------------------------------------------------+
+|  |
+|  +-- D1) break                                                                                   |
+|  |   |
+|  |   +-- EXIT LOOP IMMEDIATELY                                                                   |
+|  |   +-- EXIT SWITCH CASE                                                                        |
+|  |
+|  +-- D2) continue                                                                                |
+|  |   |
+|  |   +-- SKIP CURRENT ITERATION                                                                  |
+|  |   +-- GO TO NEXT ITERATION                                                                    |
+|  |
+|  +-- D3) LABELED break                                                                           |
+|  |   |
+|  |   +-- BREAK OUTER LOOP DIRECTLY                                                               |
+|  |   +-- break OUTER_LABEL;                                                                      |
+|  |
+|  +-- D4) LABELED continue                                                                        |
+|  |   |
+|  |   +-- CONTINUE OUTER LOOP DIRECTLY                                                            |
+|  |   +-- continue OUTER_LABEL;                                                                   |
+|  |
+|  +-- D5) return                                                                                  |
+|      |
+|      +-- EXIT METHOD IMMEDIATELY                                                                 |
+|      +-- RETURN VALUE (IF NOT void)                                                              |
+|
++--------------------------------------------------------------------------------------------------+
+|  E) EXCEPTION CONTROL FLOW (WHEN PROGRAM JUMPS DUE TO ERRORS)                                    |
++--------------------------------------------------------------------------------------------------+
+|  |
+|  +-- E1) try / catch / finally                                                                   |
+|  |   |
+|  |   +-- NORMAL FLOW (NO ERROR) -> CONTINUES                                                     |
+|  |   +-- ERROR FLOW (EXCEPTION) -> JUMPS TO catch                                                |
+|  |   +-- MULTIPLE catch BLOCKS                                                                   |
+|  |   |   |
+|  |   |   +-- ORDER MATTERS (CHILD BEFORE PARENT)                                                 |
+|  |   |
+|  |   +-- finally                                                                                |
+|  |       |
+|  |       +-- RUNS AFTER try/catch (USUALLY ALWAYS)                                               |
+|  |
+|  +-- E2) throw (MANUALLY THROW EXCEPTION)                                                        |
+|  |
+|  +-- E3) throws (DECLARE EXCEPTION TO CALLER)                                                    |
+|  |
+|  +-- E4) try-with-resources                                                                      |
+|      |
+|      +-- AUTO CLOSE RESOURCES (FILES/STREAMS/DB)                                                 |
+|
++--------------------------------------------------------------------------------------------------+
+|  F) ASSERTIONS (DEBUG-TIME CONTROL CHECK)                                                       |
++--------------------------------------------------------------------------------------------------+
+|  |
+|  +-- assert CONDITION;                                                                           |
+|  +-- assert CONDITION : "MESSAGE";                                                               |
+|  +-- ENABLE/DISABLE IDEA (-ea)                                                                   |
+|
++--------------------------------------------------------------------------------------------------+
+|  G) PRACTICAL CONTROL FLOW BLUEPRINTS (WHERE EVERYTHING IS USED)                                 |
++--------------------------------------------------------------------------------------------------+
+   |
+   +-- G1) INPUT VALIDATION                                                                        |
+   |   |
+   |   +-- KEEP ASKING UNTIL VALID (while / do-while)                                              |
+   |   +-- RANGE CHECKS                                                                            |
+   |   +-- FORMAT CHECKS                                                                           |
+   |
+   +-- G2) MENU-DRIVEN PROGRAM                                                                     |
+   |   |
+   |   +-- do-while LOOP                                                                           |
+   |   +-- switch FOR OPTIONS                                                                      |
+   |   +-- EXIT OPTION (break / return)                                                            |
+   |
+   +-- G3) COUNTING / AGGREGATION LOOPS                                                            |
+   |   |
+   |   +-- COUNT EVEN/ODD/POS/NEG                                                                  |
+   |   +-- SUM / PRODUCT                                                                           |
+   |   +-- AVERAGE                                                                                 |
+   |
+   +-- G4) MIN/MAX FAMILY                                                                          |
+   |   |
+   |   +-- MIN / MAX                                                                               |
+   |   +-- SECOND MIN / SECOND MAX                                                                 |
+   |
+   +-- G5) SEARCHING BASICS                                                                        |
+   |   |
+   |   +-- LINEAR SEARCH                                                                           |
+   |   +-- FOUND / NOT FOUND FLAG                                                                  |
+   |
+   +-- G6) NESTED DECISION RULES                                                                   |
+   |   |
+   |   +-- PRIORITY ORDER (MOST IMPORTANT CHECK FIRST)                                             |
+   |   +-- MULTI-CONDITION VALIDATION                                                              |
+   |
+   +-- G7) DEBUGGING CONTROL FLOW                                                                  |
+       |
+       +-- TRACE TABLE (i, sum, count CHANGE EACH STEP)                                            |
+       +-- OFF-BY-ONE ERRORS (<= VS <)                                                             |
+       +-- INFINITE LOOP DETECTION                                                                 |
+       +-- BRACES + INDENTATION DISCIPLINE                                                         |
+
+####################################################################################################
